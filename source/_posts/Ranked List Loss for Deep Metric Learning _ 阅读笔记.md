@@ -1,8 +1,8 @@
 ﻿---
 title: Ranked List Loss for Deep Metric Learning | 阅读笔记 
 categories: 
-- 深度学习
-- 论文阅读
+- [深度学习]
+- [论文阅读]
 tags: 
 - 度量学习
 
