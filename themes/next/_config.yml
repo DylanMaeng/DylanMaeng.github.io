@@ -225,7 +225,7 @@ utteranc:
   repo: https://github.com/DylanMaeng/Blog_comments
   pathname: pathname
   # theme: github-light,github-dark,github-dark-orange
-  theme: github-light
+  theme: github-dark
   
 # Post meta display settings
 post_meta:
