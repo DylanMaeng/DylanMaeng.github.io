@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic2.png">
 <meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic1.png">
 <meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic3.png">
-<meta property="og:updated_time" content="2019-10-26T11:10:54.085Z">
+<meta property="og:updated_time" content="2019-10-26T11:17:14.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ranked List Loss for Deep Metric Learning | 阅读笔记">
 <meta name="twitter:description" content="这是CVPR2019上一篇度量学习的论文。 摘要深度度量学习（DML）的目的是学习可以捕获数据点之间语义相似性信息的嵌入。在DML中使用的现有成对或三重损失函数在模型改进时由于大量的平凡对或三元组对而导致收敛缓慢。为了改善这一点，最近提出了基于排序的结构化损失，以结合多个示例并利用其中的结构化信息，它们收敛得更快，并实现了最先进的性能。在此基础上，作者提出现有排序激励结构损失的两种局限性，并提出了">
@@ -447,7 +447,7 @@ L_{\mathrm{m}}\left(\mathrm{x}_{i}, \mathrm{x}_{j} ; f\right)=\left(1-y_{i j}\ri
 <p><img src="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic1.png" alt="本文方法"></p>
 </blockquote>
 <p><strong><em>Non-trivial Sample Mining</em></strong></p>
-<p>对样本进行合适采样可以加快模型的收敛速率和提高模型性能，比如常见的难样本挖掘。本文使用的采样策略很简单，就是损失函数不为0的样本(非平凡样本有非零损失，由于它们具有零梯度，因此随着模型的改进，将它们包括在内进行训练将在梯度融合过程中“削弱”非平凡示例的贡献)，具体来说，对于正样本，损失函数不为0意味着它们与anchor之间的距离大于$\alpha-m$, 类似的，对于负样本，损失函数不为0意味着它们与anchor之间的距离小于$\alpha$。<br>挖掘非平凡正样本和负样本。对于$x_i$,挖掘后的非平凡正样本集表示为$ P_{c,i}^{\ast} ={ x_j^c | j \neq i, d_{ij}&gt;(\alpha-m)}$；同理，负样本集表示为$N_{c,i}^{\ast}={x_{j}^{k} | k \neq c, d_{i j}&lt;\alpha}$。</p>
+<p>对样本进行合适采样可以加快模型的收敛速率和提高模型性能，比如常见的难样本挖掘。本文使用的采样策略很简单，就是损失函数不为0的样本(非平凡样本有非零损失，由于它们具有零梯度，因此随着模型的改进，将它们包括在内进行训练将在梯度融合过程中“削弱”非平凡示例的贡献)，具体来说，对于正样本，损失函数不为0意味着它们与anchor之间的距离大于$\alpha-m$, 类似的，对于负样本，损失函数不为0意味着它们与anchor之间的距离小于$\alpha$。<br>挖掘非平凡正样本和负样本。对于$x_i$,挖掘后的非平凡正样本集表示为$ P_{c,i}^{\ast} =\{ x_j^c | j \neq i, d_{ij}&gt;(\alpha-m)\}$；同理，负样本集表示为$N_{c,i}^{\ast}=\{x_{j}^{k} | k \neq c, d_{i j}&lt;\alpha\}$。</p>
 <p><strong><em>Loss-based Negative Examples Weighting</em></strong><br>但是存在一个问题就是非平凡负样本的数量通常比较大，并且它们的损失值幅度范围也较大，为了更好的利用它们，作者基于他们损失值进行加权。加权的方式为： </p>
 <script type="math/tex; mode=display">
 w_{i j}=\exp \left(T \cdot\left(\alpha-d_{i j}\right)\right), \mathrm{x}_{j}^{k} \in \mathrm{N}_{c, i}^{*}  \quad \quad \quad(9)</script><p>注意到，相对于任何嵌入的梯度幅度在等式（8）中始终为1。数学上：</p>
