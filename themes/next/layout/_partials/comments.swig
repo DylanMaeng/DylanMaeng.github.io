@@ -65,10 +65,10 @@
   {% elseif theme.valine.appid and theme.valine.appkey %}
     <div class="comments" id="comments">
     </div>
-	{% elif theme.utterance.enable %}
-  <div class="comments" id="comments">
+  {% elif theme.utterance.enable %}
+    <div class="comments" id="comments">
       <div id="gitment-container"></div>
-  </div>
+    </div>
   {% endif %}
 
 {% endif %}
