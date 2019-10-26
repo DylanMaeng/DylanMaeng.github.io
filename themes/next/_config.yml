@@ -219,6 +219,14 @@ auto_excerpt:
   enable: true
   length: 150
 
+# Demo: https://utteranc.es/  http://trumandu.github.io/about/
+utteranc:
+  enable: true
+  repo: https://github.com/DylanMaeng/Blog_comments
+  pathname: pathname
+  # theme: github-light,github-dark,github-dark-orange
+  theme: github-light
+  
 # Post meta display settings
 post_meta:
   item_text: true
