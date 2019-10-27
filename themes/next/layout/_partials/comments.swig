@@ -67,7 +67,7 @@
     </div>
   {% elseif theme.utterances.enable %}
     <div class="comments" id="comments">
-      {% include '../_third-party/comments/utterances.swig' %}
+       <div id="gitment-container"></div>
     </div>
   {% endif %}
 
