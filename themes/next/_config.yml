@@ -220,7 +220,7 @@ auto_excerpt:
   length: 150
 
 # Demo: https://utteranc.es/  http://trumandu.github.io/about/
-utteranc:
+utterances:
   enable: true
   repo: https://github.com/DylanMaeng/Blog_comments
   pathname: pathname
