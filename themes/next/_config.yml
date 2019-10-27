@@ -223,9 +223,9 @@ auto_excerpt:
 utterances:
   enable: true
   repo: https://github.com/DylanMaeng/Blog_comments
-  pathname: pathname
+  issue_term: pathname
   # theme: github-light,github-dark,github-dark-orange
-  theme: github-dark
+  theme: github-light
   
 # Post meta display settings
 post_meta:
