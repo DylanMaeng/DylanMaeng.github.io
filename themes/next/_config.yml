@@ -222,7 +222,7 @@ auto_excerpt:
 # Demo: https://utteranc.es/  http://trumandu.github.io/about/
 utterances:
   enable: true
-  repo: https://github.com/DylanMaeng/Blog_comments
+  repo: DylanMaeng/Blog_comments
   issue_term: pathname
   # theme: github-light,github-dark,github-dark-orange
   theme: github-light
