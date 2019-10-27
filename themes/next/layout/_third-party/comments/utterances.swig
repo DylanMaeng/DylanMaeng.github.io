@@ -1,9 +1,8 @@
 {% if theme.utterances.enable %}
 <script src="https://utteranc.es/client.js"
-        repo="{{ theme.utterances.repo }}"
-        issue-term="{{ theme.utterances.issue_term }}"
-        label="Comment"
-        theme="{{ theme.utterances.theme }}"
+        repo="https://github.com/DylanMaeng/Blog_comments"
+        issue-term="pathname"
+        theme="github-light"
         crossorigin="anonymous"
         async>
 </script>
