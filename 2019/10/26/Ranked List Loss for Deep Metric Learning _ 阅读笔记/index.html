@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="这是CVPR2019上一篇度量学习的论文。 摘要深度度量学习（DML）的目的是学习可以捕获数据点之间语义相似性信息的嵌入。在DML中使用的现有成对或三重损失函数在模型改进时由于大量的平凡对或三元组对而导致收敛缓慢。为了改善这一点，最近提出了基于排序的结构化损失，以结合多个示例并利用其中的结构化信息，它们收敛得更快，并实现了最先进的性能。在此基础上，作者提出现有排序激励结构损失的两种局限性，并提出了">
+<meta name="description" content="这是CVPR2019上一篇度量学习的论文。此文为阅读笔记。">
 <meta name="keywords" content="度量学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ranked List Loss for Deep Metric Learning | 阅读笔记">
 <meta property="og:url" content="http://yoursite.com/2019/10/26/Ranked List Loss for Deep Metric Learning _ 阅读笔记/index.html">
 <meta property="og:site_name" content="DylanMaeng&#39;s Notes">
-<meta property="og:description" content="这是CVPR2019上一篇度量学习的论文。 摘要深度度量学习（DML）的目的是学习可以捕获数据点之间语义相似性信息的嵌入。在DML中使用的现有成对或三重损失函数在模型改进时由于大量的平凡对或三元组对而导致收敛缓慢。为了改善这一点，最近提出了基于排序的结构化损失，以结合多个示例并利用其中的结构化信息，它们收敛得更快，并实现了最先进的性能。在此基础上，作者提出现有排序激励结构损失的两种局限性，并提出了">
+<meta property="og:description" content="这是CVPR2019上一篇度量学习的论文。此文为阅读笔记。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic2.png">
 <meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic1.png">
 <meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic3.png">
-<meta property="og:updated_time" content="2019-10-26T11:17:14.353Z">
+<meta property="og:updated_time" content="2021-03-07T14:06:15.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ranked List Loss for Deep Metric Learning | 阅读笔记">
-<meta name="twitter:description" content="这是CVPR2019上一篇度量学习的论文。 摘要深度度量学习（DML）的目的是学习可以捕获数据点之间语义相似性信息的嵌入。在DML中使用的现有成对或三重损失函数在模型改进时由于大量的平凡对或三元组对而导致收敛缓慢。为了改善这一点，最近提出了基于排序的结构化损失，以结合多个示例并利用其中的结构化信息，它们收敛得更快，并实现了最先进的性能。在此基础上，作者提出现有排序激励结构损失的两种局限性，并提出了">
+<meta name="twitter:description" content="这是CVPR2019上一篇度量学习的论文。此文为阅读笔记。">
 <meta name="twitter:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic2.png">
 
 
@@ -399,7 +399,7 @@
       
 
       
-        <p>这是CVPR2019上一篇度量学习的论文。</p>
+        <p>这是CVPR2019上一篇度量学习的论文。此文为阅读笔记。<br><a id="more"></a></p>
 <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h2><p>深度度量学习（DML）的目的是学习可以捕获数据点之间语义相似性信息的嵌入。在DML中使用的现有成对或三重损失函数在模型改进时由于大量的平凡对或三元组对而导致收敛缓慢。为了改善这一点，最近提出了基于排序的结构化损失，以结合多个示例并利用其中的结构化信息，它们收敛得更快，并实现了最先进的性能。在此基础上，作者提出现有排序激励结构损失的两种局限性，并提出了一种新的排序列表损失方法来解决这两种问题。<strong>首先</strong>，首先，给定查询，仅结合一部分数据点以构建相似性结构。因此，忽略了一些有用的示例，并且该结构的信息量较少。为了解决这个问题，提出了通过利用图库中的所有实例来构建基于集合的相似性结构。将样本分为正样本集和负样本集，目标是利用一个margin使查询更接近正样本集，而不是负样本集。<strong>其次</strong>，先前的方法旨在在嵌入空间中尽可能接近正样本对。结果，类内数据分布可能会被丢弃。相反，本文提出为每个类学习一个超球面，以保留其中的相似性结构。 广泛的实验表明，所提出的方法在三个广泛使用的基准上达到了最先进的性能。</p>
 <hr>
 <h2 id="Introduction："><a href="#Introduction：" class="headerlink" title="Introduction："></a><strong>Introduction：</strong></h2><p>深度度量学习（DML）在计算机视觉的各种应用中起着至关重要的作用，例如图像检索、聚类和迁移学习。此外，DML是挑战极端分类设置的一个很好的解决方案，其中存在大量的类，而每个类只有很少的图像。一个经典的应用就是人脸识别，Google的FaceNet模型使用Triplet-Loss刷新了当时人脸识别的记录，在人脸验证方面实现了超越人类的性能。</p>
