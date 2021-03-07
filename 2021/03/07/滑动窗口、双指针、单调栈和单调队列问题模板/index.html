@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="结合labuladong大佬的总结，自己在他上面再总结一下。 一.双指针技巧：把双指针技巧分为两类：一类是【快慢指针】，一类是【左右指针】，前者主要解决链表中的问题，比如典型的判定链表中是否包含环；后者主要解决数组（或者字符串）中的问题，比如二分查找。 1.快慢指针的常见算法快慢指针一般都初始化指向链表的头结点head,前进时快指针fast在前，慢指针slow在后，巧妙解决一些链表问题。 例:力扣">
+<meta name="description" content="结合labuladong大佬的总结，自己在他上面再总结一下。">
 <meta name="keywords" content="数据结构与算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="滑动窗口、双指针、单调栈和单调队列问题模板">
 <meta property="og:url" content="http://yoursite.com/2021/03/07/滑动窗口、双指针、单调栈和单调队列问题模板/index.html">
 <meta property="og:site_name" content="DylanMaeng&#39;s Notes">
-<meta property="og:description" content="结合labuladong大佬的总结，自己在他上面再总结一下。 一.双指针技巧：把双指针技巧分为两类：一类是【快慢指针】，一类是【左右指针】，前者主要解决链表中的问题，比如典型的判定链表中是否包含环；后者主要解决数组（或者字符串）中的问题，比如二分查找。 1.快慢指针的常见算法快慢指针一般都初始化指向链表的头结点head,前进时快指针fast在前，慢指针slow在后，巧妙解决一些链表问题。 例:力扣">
+<meta property="og:description" content="结合labuladong大佬的总结，自己在他上面再总结一下。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://labuladong.github.io/algo/pictures/%E5%8F%8C%E6%8C%87%E9%92%88/2.jpeg">
 <meta property="og:image" content="https://labuladong.github.io/algo/pictures/slidingwindow/title1.png">
 <meta property="og:image" content="https://labuladong.github.io/algo/pictures/slidingwindow/poem.png">
-<meta property="og:updated_time" content="2021-03-07T13:55:32.142Z">
+<meta property="og:updated_time" content="2021-03-07T14:01:01.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="滑动窗口、双指针、单调栈和单调队列问题模板">
-<meta name="twitter:description" content="结合labuladong大佬的总结，自己在他上面再总结一下。 一.双指针技巧：把双指针技巧分为两类：一类是【快慢指针】，一类是【左右指针】，前者主要解决链表中的问题，比如典型的判定链表中是否包含环；后者主要解决数组（或者字符串）中的问题，比如二分查找。 1.快慢指针的常见算法快慢指针一般都初始化指向链表的头结点head,前进时快指针fast在前，慢指针slow在后，巧妙解决一些链表问题。 例:力扣">
+<meta name="twitter:description" content="结合labuladong大佬的总结，自己在他上面再总结一下。">
 <meta name="twitter:image" content="https://labuladong.github.io/algo/pictures/%E5%8F%8C%E6%8C%87%E9%92%88/2.jpeg">
 
 
@@ -411,6 +411,7 @@
 
       
         <p>结合labuladong大佬的总结，自己在他上面再总结一下。</p>
+<a id="more"></a>
 <h2 id="一-双指针技巧："><a href="#一-双指针技巧：" class="headerlink" title="一.双指针技巧："></a><strong>一.双指针技巧：</strong></h2><p>把双指针技巧分为两类：一类是【快慢指针】，一类是【左右指针】，前者主要解决链表中的问题，比如典型的判定链表中是否包含环；后者主要解决数组（或者字符串）中的问题，比如二分查找。</p>
 <h3 id="1-快慢指针的常见算法"><a href="#1-快慢指针的常见算法" class="headerlink" title="1.快慢指针的常见算法"></a><strong>1.快慢指针的常见算法</strong></h3><p>快慢指针一般都初始化指向链表的头结点head,前进时快指针fast在前，慢指针slow在后，巧妙解决一些链表问题。</p>
 <p><strong>例:力扣142题，已知链表中含有环，返回这个环的起始位置</strong></p>
