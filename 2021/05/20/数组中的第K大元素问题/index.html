@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="度量学习,">
+  <meta name="keywords" content="数据结构与算法,c++,力扣,">
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="这是CVPR2019上一篇度量学习的论文。此文为阅读笔记。">
-<meta name="keywords" content="度量学习">
+<meta name="description" content="问题： 在未排序的数组中找到第  k  个最大的元素。请注意，需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。约定: 假设这里数组的长度为 n。">
+<meta name="keywords" content="数据结构与算法,c++,力扣">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ranked List Loss for Deep Metric Learning | 阅读笔记">
-<meta property="og:url" content="http://yoursite.com/2019/10/26/Ranked List Loss for Deep Metric Learning _ 阅读笔记/index.html">
+<meta property="og:title" content="滑动窗口、双指针、单调栈和单调队列问题模板">
+<meta property="og:url" content="http://yoursite.com/2021/05/20/数组中的第K大元素问题/index.html">
 <meta property="og:site_name" content="DylanMaeng&#39;s Notes">
-<meta property="og:description" content="这是CVPR2019上一篇度量学习的论文。此文为阅读笔记。">
+<meta property="og:description" content="问题： 在未排序的数组中找到第  k  个最大的元素。请注意，需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。约定: 假设这里数组的长度为 n。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic2.png">
-<meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic1.png">
-<meta property="og:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic3.png">
-<meta property="og:updated_time" content="2021-03-07T14:06:15.268Z">
+<meta property="og:updated_time" content="2021-05-20T07:02:50.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ranked List Loss for Deep Metric Learning | 阅读笔记">
-<meta name="twitter:description" content="这是CVPR2019上一篇度量学习的论文。此文为阅读笔记。">
-<meta name="twitter:image" content="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic2.png">
+<meta name="twitter:title" content="滑动窗口、双指针、单调栈和单调队列问题模板">
+<meta name="twitter:description" content="问题： 在未排序的数组中找到第  k  个最大的元素。请注意，需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。约定: 假设这里数组的长度为 n。">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/26/Ranked List Loss for Deep Metric Learning _ 阅读笔记/">
+  <link rel="canonical" href="http://yoursite.com/2021/05/20/数组中的第K大元素问题/">
 
 
 
 
 
-  <title>Ranked List Loss for Deep Metric Learning | 阅读笔记 | DylanMaeng's Notes</title>
+  <title>滑动窗口、双指针、单调栈和单调队列问题模板 | DylanMaeng's Notes</title>
   
 
 
@@ -299,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/26/Ranked List Loss for Deep Metric Learning _ 阅读笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/20/数组中的第K大元素问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dylan Maeng">
@@ -316,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ranked List Loss for Deep Metric Learning | 阅读笔记</h1>
+          <h1 class="post-title" itemprop="name headline">滑动窗口、双指针、单调栈和单调队列问题模板</h1>
         
 
         <div class="post-meta">
@@ -328,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-26T18:10:11+08:00">
-                2019-10-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-20T14:59:59+08:00">
+                2021-05-20
               </time>
             
 
@@ -351,19 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/深度学习/" itemprop="url" rel="index">
-                    <span itemprop="name">深度学习</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/论文阅读/" itemprop="url" rel="index">
-                    <span itemprop="name">论文阅读</span>
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
                   </a>
                 </span>
 
@@ -399,76 +384,67 @@
       
 
       
-        <p>这是CVPR2019上一篇度量学习的论文。此文为阅读笔记。<br><a id="more"></a></p>
-<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h2><p>深度度量学习（DML）的目的是学习可以捕获数据点之间语义相似性信息的嵌入。在DML中使用的现有成对或三重损失函数在模型改进时由于大量的平凡对或三元组对而导致收敛缓慢。为了改善这一点，最近提出了基于排序的结构化损失，以结合多个示例并利用其中的结构化信息，它们收敛得更快，并实现了最先进的性能。在此基础上，作者提出现有排序激励结构损失的两种局限性，并提出了一种新的排序列表损失方法来解决这两种问题。<strong>首先</strong>，首先，给定查询，仅结合一部分数据点以构建相似性结构。因此，忽略了一些有用的示例，并且该结构的信息量较少。为了解决这个问题，提出了通过利用图库中的所有实例来构建基于集合的相似性结构。将样本分为正样本集和负样本集，目标是利用一个margin使查询更接近正样本集，而不是负样本集。<strong>其次</strong>，先前的方法旨在在嵌入空间中尽可能接近正样本对。结果，类内数据分布可能会被丢弃。相反，本文提出为每个类学习一个超球面，以保留其中的相似性结构。 广泛的实验表明，所提出的方法在三个广泛使用的基准上达到了最先进的性能。</p>
-<hr>
-<h2 id="Introduction："><a href="#Introduction：" class="headerlink" title="Introduction："></a><strong>Introduction：</strong></h2><p>深度度量学习（DML）在计算机视觉的各种应用中起着至关重要的作用，例如图像检索、聚类和迁移学习。此外，DML是挑战极端分类设置的一个很好的解决方案，其中存在大量的类，而每个类只有很少的图像。一个经典的应用就是人脸识别，Google的FaceNet模型使用Triplet-Loss刷新了当时人脸识别的记录，在人脸验证方面实现了超越人类的性能。</p>
-<p>基于深度学习的度量学习其发展主要体现在各种不同的Loss Function 上。最基本的两种损失函数分别是 Contrastive Loss 和 Triplet-Loss。Contrastive Loss  主要是约束成对数据之间的相似或者不相似。Triplet-Loss 则包括一个锚点(anchor)、一个正样本和一个负样本，它的目的是使得锚点和正样本的距离尽可能小，与负样本的距离尽可能大。一般来说，Triplet-Loss的效果比Contrastive Loss的效果要好，因为他考虑了正负样本与锚点的距离关系。基于上述的两种损失函数衍生出了很多变形，比如将数据丰富的结构化信息加入到Loss中，而不仅仅局限于二元组或三元组。</p>
-<h3 id="本文贡献如下："><a href="#本文贡献如下：" class="headerlink" title="本文贡献如下："></a><strong>本文贡献如下：</strong></h3><blockquote>
+        <p><strong>问题：</strong> 在未排序的数组中找到第  <strong>k</strong>  个最大的元素。请注意，需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。<br><strong>约定:</strong> 假设这里数组的长度为 n。<br><a id="more"></a></p>
+<h1 id="方法一：基于快速排序的选择方法"><a href="#方法一：基于快速排序的选择方法" class="headerlink" title="方法一：基于快速排序的选择方法"></a>方法一：基于快速排序的选择方法</h1><p><strong>思路和方法</strong><br>可以用快速排序来解决这个问题，先对原数组排序，再返回倒数第K个位置，这样的平均时间复杂度为$O(nlogn)$,但其实我们可以做的更快。<br>首先回顾快速排序，这是一个典型的分支算法。对数组$a[l…r]$做快速排序的过程：</p>
+<blockquote>
 <ul>
-<li>提出了一种新颖的基于排序的结构化损失(RLL)来学习判别式嵌入。与以前的排序思想损失相比，是第一个结合所有非平凡数据点并利用其中结构的人。此外，我们还为每个类学习了一个超球面来保存类内的数据分布，而不是将每个类缩小成一个点</li>
-<li>在三个主流的基准数据集（即CARS196 [15]，CUB-200-2011 [32]和SOP [20]）上达到了最好水平。</li>
+<li><strong>分解：</strong> 将数组$a[l…r]$ 「划分」 成两个子数组$a[l…q-1]、a[q+1…r]$，使得$a[l…q-1]$中的每个元素都小于a[q]，且a[q]小于等于$a[q+1…r]$中的每个元素。其中，计算下标q也是「划分」过程的一部分。</li>
+<li><strong>解决：</strong>通过递归调用快速排序，对子数组$a[l…q-1]$和$a[q+1…r]$进行排序。</li>
+<li><strong>合并：</strong>因为子数组都是原址排序的，所以并不需要进行合并操作，$a[l…r]$已经有序。</li>
+<li>上文提到的<strong>「划分」</strong>过程是：从子数组 $a[l…r]$中选择任意一个元素 x作为主元，<strong>调整子数组的元素使得左边的元素都小于等于它，右边的元素都大于等于它</strong>，x的最终位置就是q。</li>
 </ul>
 </blockquote>
-<hr>
-<h2 id="Structured-Losses"><a href="#Structured-Losses" class="headerlink" title="Structured Losses"></a><strong>Structured Losses</strong></h2><p><strong>符号</strong>：<br>$X=\{(x_i,y_i)\}_{i=1}^N $是输入数据，$(x_i,y_i)$表示第$i$个图像和它对应的类别标签。类别总数为<strong>$C$</strong>，例如$y_i\in[1,2,…,C]$;来自第$c$类的图像被表示为$\{N_i^c\}_{i=1}^{N_c}$,其中$N_c$是第$c$类图像的数量。</p>
-<h3 id="Ranking-Motivated-Structured-Losses"><a href="#Ranking-Motivated-Structured-Losses" class="headerlink" title="Ranking-Motivated Structured Losses"></a>Ranking-Motivated Structured Losses</h3><h4 id="Triplet-Loss"><a href="#Triplet-Loss" class="headerlink" title="Triplet Loss"></a><strong><em>Triplet Loss</em></strong></h4><p>Triplet Loss的目的是用一个固定的间隔使锚点更靠近正点而不是负点。</p>
-<script type="math/tex; mode=display">L(X;f)=\frac{1}{|\Gamma|}\sum_{(i,j,k)\in\Gamma}[d^2_{ij}+m-d^2_{ik}]_+  \quad \quad(1)</script><p>$\Gamma$是三元组集合，$i,j,k$对应地表示锚点、正样本和负样本点的下标，$f$是嵌入函数，$d^2_{ij}=||f(x_i)-f(x_j)||_2$是欧氏距离，$[\cdot]_+$是hinge函数。</p>
-<h4 id="N-pair-mc"><a href="#N-pair-mc" class="headerlink" title="N-pair-mc"></a><strong><em>N-pair-mc</em></strong></h4><p>不同于Triplet Loss使用单个的正负样本，这个损失函数利用了数据之间的结构信息来学习到更有区别性的表示。具体来说，样本由一个正样本和$N-1$个负样本组成，这$N-1$个负样本来自于$N-1$个不同的类别，即每个类别1个负样本。</p>
-<script type="math/tex; mode=display">L(\{(x_i,x_i^+)\}_{i=1}^{N};f)=\frac{1}{N}\sum_{i=1}^Nlog\{1+\sum_{j\neq i}\exp(f_i^{\top}f_j^{+}-f_i^{\top}f_i^{+})\}\quad \quad (2)</script><p>$\mathrm{f}_{i}=f\left(\mathrm{x}_{i}\right)$和$\left\{\left(\mathbf{x}_{i}, \mathbf{x}_{i}^{+}\right)\right\}_{i=1}^{N}$是来自$N$种不同类别的$N$对样本，例如$y_{i} \neq y_{j}, \forall i \neq j$。这里$x_i$和$x_+$分别表示查询和正样本，${x_j^+,i\neq j}$是负样本。</p>
-<h4 id="Lifted-Struct"><a href="#Lifted-Struct" class="headerlink" title="Lifted Struct"></a><strong><em>Lifted Struct</em></strong></h4><p>这个目标函数比N-pair-mc更进一步，提出引入所有的负样本，通过促使锚点与一个正样本的距离尽可能近，与所有的负样本的距离都大于$\alpha$。 </p>
-<script type="math/tex; mode=display">
-\begin{aligned} L(\mathbf{X} ; f)=& \frac{1}{2|\mathbf{P}|} \sum_{(i, j) \in \mathbf{P}}\left[\left\{d_{i j}+\log \left(\sum_{(i, k) \in \mathbf{N}} \exp \left(\alpha-d_{i k}\right)\right.\right.\right. \left.\left.\left.+\sum_{(j, l) \in \mathbf{N}} \exp \left(\alpha-d_{j l}\right)\right)\right\}\right]_{+} \end{aligned}
-\quad \quad (3)</script><p>$P$和$N$分别表示正对和负对的集合，给一个查询$x_i$，Lifted Struct打算从所有对应的负数据点中识别一个正示例。</p>
-<h4 id="Proxy-NCA"><a href="#Proxy-NCA" class="headerlink" title="Proxy-NCA"></a><strong><em>Proxy-NCA</em></strong></h4><p>这个方法提出的目的是用代理去解决采样的问题。假设$W$代表着训练集中的一小部分数据，在采样时通过选择与$W$中距离最近的一个样本$u$作为代理(proxy), 即：</p>
-<script type="math/tex; mode=display">
-p(\mathbf{u})=\arg \min _{\mathbf{w} \in \mathbf{W}} d(\mathbf{u}, \mathbf{w})\quad \quad (4)</script><p>$p(u)$表示从$W$到$u$的最近点，基于选择的proxy, 使用传统的NCA损失：</p>
-<script type="math/tex; mode=display">
-L(\mathbf{a}, \mathbf{u}, \mathbf{Z})=-\log \left(\frac{\exp (-d(\mathbf{a}, p(\mathbf{u})))}{\sum_{\mathbf{z} \in \mathbf{Z}} \exp (-d(\mathbf{a}, p(\mathbf{z})))}\right) \quad \quad (5)</script><p>$Z$是负样本集， $p(u)$ 、$p(z)$分别表示正样本和负样本的代理,$a$是锚点，$d(\cdot,\cdot)$是两个点间的欧氏距离。<br>上述几种损失的示意图如下：</p>
+<p>由此发现每次经过「划分」操作后，一定可以确定一个元素的最终位置，即x的最终位置为 q，并且保证 $a[l…q-1]$中的每个元素小于等于a[q]，且a[q] 小于等于$a[q+1…r]$中的每个元素。所以只要某次划分的q为倒数第k个下标的时候，就找到了答案。 只关心这一点，至于$a[l…q-1]$和$a[q+1…r]$是否是有序的，不关心。<br>因此可以改进快速排序算法来解决这个问题：在分解的过程当中，会对子数组进行划分，如果划分得到的q正好就是我们需要的下标，就直接返回a[q]；否则，如果q比目标下标小，就递归右子区间，否则递归左子区间。这样就可以把原来递归两个区间变成只递归一个区间，提高了时间效率。这就是「快速选择」算法。</p>
+<p>我们知道快速排序的性能和「划分」出的子数组的长度密切相关。直观地理解如果每次规模为n的问题我们都划分成1和$n - 1$，每次递归的时候又向$n - 1$的集合中递归，这种情况是最坏的，时间代价是 $O(n ^ 2)$。这里可以引入随机化来加速这个过程，它的时间代价的期望是$O(n)$，证明过程可以参考「《算法导论》9.2：期望为线性的选择算法」。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">inline int partition(vector&lt;int&gt;&amp; a, int l, int r) &#123;</span><br><span class="line">     // 3. 在调用当前方法的randomPartition方法中，已经确定了了随机数是a[r]</span><br><span class="line">    int x = a[r], i = l - 1;</span><br><span class="line">     // 首先比较区间在[l， r]之间， 所以a[j]中的    l&lt;= j &lt;= r</span><br><span class="line">    for (int j = l; j &lt; r; ++j) &#123;</span><br><span class="line">         // 4. a[j] 跟随机数 x 比较, 小于x的数都跟[l,r]左边区间交换，i=l-1,所以++i=l,初始索引就是l,</span><br><span class="line">        if (a[j] &lt;= x) &#123;</span><br><span class="line">            swap(a[++i], a[j]);  //两两交换</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;// 这个for循环操作就是将小于 x 的数都往[i, j]的左边区间设置，从而实现存在[l, i]区间,使得对应数值都 小于 x</span><br><span class="line">    </span><br><span class="line">     //5. 既然已经将&lt;x的值都放在一边了，现在将x也就是a[r] 跟a[i+1]交换，从而分成两个区间[l.i+1]左, [i+2, r]右，左边区间的值都小于x</span><br><span class="line">    swap(a[i + 1], a[r]);</span><br><span class="line">    // 然后返回这个分区值</span><br><span class="line">    return i + 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline int randomPartition(vector&lt;int&gt;&amp; a, int l, int r) &#123;</span><br><span class="line">    // 1. 随机数范围: [0, r-l+1) 同时加l, 则是 [l, r+1) = [l, r] 也就是在这个[l,r] 中随机选一个索引出来</span><br><span class="line">    int i = rand() % (r - l + 1) + l;</span><br><span class="line">    </span><br><span class="line">     // 2. 交换a[i]， a[r], 也就是将随机数先放在[l,r]最右边a[r]上</span><br><span class="line">    swap(a[i], a[r]);</span><br><span class="line">    return partition(a, l, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> // 得到分区值索引q</span><br><span class="line">int quickSelect(vector&lt;int&gt;&amp; a, int l, int r, int index) &#123;</span><br><span class="line">    int q = randomPartition(a, l, r);</span><br><span class="line">    // 如果刚好索引q就是想要的索引，则直接返回</span><br><span class="line">    if (q == index) &#123;</span><br><span class="line">        return a[q];</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">         // 如果不是，比较q 与 index ,确定下次要检索的区间, 要么是[q+1, right], 要么就是[left, q-1]</span><br><span class="line">        return q &lt; index ? quickSelect(a, q + 1, r, index) : quickSelect(a, l, q - 1, index);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> // 要找到的元素所在索引:  前K大，即倒数索引第K个</span><br><span class="line">int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;</span><br><span class="line">    srand(time(0));</span><br><span class="line">    return quickSelect(nums, 0, nums.size() - 1, nums.size() - k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
 <blockquote>
-<p><img src="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic2.png" alt></p>
+<ul>
+<li>时间复杂度:$O(n)$，如上文所述，证明过程可以参考「《算法导论》9.2：期望为线性的选择算法」。</li>
+<li>空间复杂度:$O(logn)$，递归使用栈空间的空间代价的期望为$O(logn)$。</li>
+</ul>
 </blockquote>
-<h3 id="Clustering-Motivated-Structured-Losses"><a href="#Clustering-Motivated-Structured-Losses" class="headerlink" title="Clustering-Motivated Structured Losses"></a>Clustering-Motivated Structured Losses</h3><p>用到再写吧</p>
-<p>上述的损失函数都存在如下的两点局限性：</p>
+<p><strong>库函数</strong></p>
+<blockquote>
+<p>nth_element(first, nth, last, compare)</p>
+</blockquote>
+<p>求[first, last]这个区间中第n大小的元素，如果参数加入了compare函数，就按compare函数的方式比较。nth_element仅排序第n个元素（从0开始索引），即将位置n（从0开始）的元素放在第n大的位置，处理完之后，默认排在它前面的元素都不比它大，排在它后面的元素都不比它小。</p>
+<hr>
+<h1 id="方法二：基于堆排序的选择方法"><a href="#方法二：基于堆排序的选择方法" class="headerlink" title="方法二：基于堆排序的选择方法"></a>方法二：基于堆排序的选择方法</h1><p><strong>思路和算法</strong></p>
+<p>也可以使用堆排序来解决这个问题——建立一个大根堆，做$k - 1$次删除操作后堆顶元素就是我们要找的答案。在很多语言中，都有优先队列或者堆的的容器可以直接使用，但是在面试中，面试官更倾向于让更面试者自己实现一个堆。所以这里实现大根堆，主要搞懂「建堆」、「调整」和「删除」的过程。</p>
+<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a><strong>堆</strong></h2><p>堆是一种特殊的树结构，即完全二叉树。堆分为大根堆和小根堆，大根堆为根节点的值大于两个子节点的值；小根堆为根节点的值小于两个子节点的值，同时根节点的两个子树也分别是一个堆。</p>
+<p>通俗来讲，<strong>二叉树在按层序遍历时在遇到第一个NULL指针即作为结尾的二叉树</strong>就可以称之为完全二叉树。</p>
+<p>根节点下标为0，若父节点相应数组下标为i，则其左孩子相应数组下标为2<em>i+1，右孩子为2</em>i+2.</p>
+<p><strong>注意：如果我们现在处理第i个序号的结点的数，那么他的父结点序号就是$(i-1)/2$，它的孩子结点就为$2i+1$与$2i+2$。这个容易想，右子节点如果直接除以2，得到$i+1$，但是$2i+2-1$和$2i+1-1$除以2可以得到i。根节点从0开始，则n个节点的堆，最后一个叶节点的下标为$n-1$，其父节点是第一个非叶节点，下标为$((n-1)-1 )/ 2 = (n-2)/2 = n/2 - 1$</strong></p>
 <blockquote>
 <ol>
-<li>这些损失函数虽然都提出了加入更多的负样本来获得结构化的信息，但是使用的负样本仅仅是一小部分；</li>
-<li>另外这些损失函数没有考虑类内的数据分布，都追求将同一个class压缩到一个点上。</li>
+<li>首先用前n个元素的无序序列，构建成大顶堆；构建大顶堆时，从最后一个非叶节点$n/2-1$的位置开始检查节点与其孩子值是否满足大顶堆的要求，不满足则需要调整该元素与其孩子节点元素的位置，如果有调整，则调整过的孩子节点（子树）也要递归调用调整子树中的元素值位置，保证子树也是大顶堆。然后按照层次遍历的顺序依次往前，从右到左，从下到上调整所有非叶节点的值，最后根节点的值就是最大值；</li>
+<li>得到大顶堆后将根节点与数组待排序部分的最后一个元素交换位置，即将最大元素”沉”到数组末端；</li>
+<li>交换过后待排序数组长度减一，再对新长度的待排序数组重复上述过程，直到整个数组排序完成。如果我们要数组整体递增有序，则每次构建的是大顶堆；如果我们要数组整体递减有序，则每次构建的是小顶堆。</li>
 </ol>
 </blockquote>
-<p>本文基于上述的两个原因，提出了相应的改进措施,也即本文提出的Ranked List Loss（RRL）。</p>
-<h3 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a><strong>Methodology</strong></h3><p>目标是学习可判别的的函数$f$（又称深度度量），以使正样本对之间的相似度高于特征空间中负样本对之间的相似度，在这种情况下，给定来自任何类的查询，旨在从所有其他示例中识别其匹配样本。</p>
-<h4 id="Pairwise-Constraint"><a href="#Pairwise-Constraint" class="headerlink" title="Pairwise Constraint"></a><strong><em>Pairwise Constraint</em></strong></h4><p>为了将正负样本区分开，希望负样本之间的距离大于某个阈值$\alpha$，并且正样本之间的距离小于α-m，即正负样本之间至少有m的间隔。基于此，选择pairwise margin loss作为基本的承兑对比损失去构造基于集合相似度的结构：</p>
-<p>给一个图像$x_i$,目标是将其负样本点推到比边界$\alpha$更远的位置，将其正样本点推到比另一个边界$\alpha-m$更近的位置,因此$m$是两个边界的间隔。数学形式：</p>
-<script type="math/tex; mode=display">
-L_{\mathrm{m}}\left(\mathrm{x}_{i}, \mathrm{x}_{j} ; f\right)=\left(1-y_{i j}\right)\left[\alpha-d_{i j}\right]_{+}+y_{i j}\left[d_{i j}-(\alpha-m)\right]_{+} \quad \quad（8）</script><p>其中当$y_i=y_j$时，$y_{ij}=1$;反之,$y_{ij}=0$。$d_{ij}=\left|f(\mathrm{x}_{i})-f(\mathrm{x}_{j})\right|_{2}$是两点间的欧式距离。</p>
-<h4 id="Ranked-List-Loss"><a href="#Ranked-List-Loss" class="headerlink" title="Ranked List Loss"></a><strong><em>Ranked List Loss</em></strong></h4><p>给定一个anchor ($x_i$),基于相似度对其他样本进行排序,如下图所示，在这个排序的结果中，正样本集$\mathbf{P}_{c, i}=\left\{\mathbf{x}_{j}^{c} | j \neq i\right\}$,$\left|\mathbf{P}_{c,i}\right|=N_{c}-1$中有$N_c-1$个正样本,同样地，负样本集$\mathbf{N}_{c,i}=\left\{\mathbf{x}_{j}^{k} | k \neq c\right\}$,$\left|\mathbf{N}_{c, i}\right|=\sum_{k \neq c} N_{k}$中有$\sum_{k \neq c} N_{k}$个负样本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">void buildMaxHeap(vector&lt;int&gt;&amp; A, int n)  //建立最大堆</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">// 从最后一个非叶子节点（n/2-1）开始自底向上构建，</span><br><span class="line">    for(int i = n/2-1; i&gt;=0; --i)  //从（n/2-1）调用一次maxHeapIfy就可以得到最大堆</span><br><span class="line"></span><br><span class="line">         maxHeapify(A, i, n);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void maxHeapify(vector&lt;int&gt; &amp;A, int i, int n) //将i节点为根的堆中小的数依次上移,n表示堆中的数据个数</span><br><span class="line">&#123;</span><br><span class="line">    int left = 2*i+1;  //i的左儿子</span><br><span class="line">    int right = 2*i+2;  //i的右儿子</span><br><span class="line">    int largest = i;     //先设置父节点和子节点三个节点中最大值的位置为父节点下标</span><br><span class="line">    if(left &lt; n &amp;&amp; A[left] &gt; A[largest])&#123;</span><br><span class="line">        largest = left;</span><br><span class="line">    &#125;</span><br><span class="line">    if(right &lt; n &amp;&amp; A[right] &gt; A[largest])&#123;</span><br><span class="line">        largest = right;</span><br><span class="line">    &#125;</span><br><span class="line">    if(largest != i)&#123; //最大值不是父节点，交换</span><br><span class="line">        swap(A[i], A[largest]);</span><br><span class="line">        maxHeapify(A, largest, n); //递归调用，保证子树也是最大堆</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void heapSort(vector&lt;int&gt;&amp; A, int n)&#123;   // 堆排序算法</span><br><span class="line">    buildMaxHeap(A,n);  //先建立堆</span><br><span class="line">    for(int i = n-1; i&gt;0; --i)&#123;</span><br><span class="line">        // 将根节点(最大值)与数组待排序部分的最后一个元素交换,这样最终得到的是递增序列</span><br><span class="line">        swap(A[0], A[i]);</span><br><span class="line">        // 待排序数组长度减一,只要对换到根节点的元素进行排序，将它下沉就好了。</span><br><span class="line">        maxHeapify(A, 0, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;</span><br><span class="line">    int heapSize = nums.size();</span><br><span class="line">    buildMaxHeap(nums, heapSize);</span><br><span class="line">    for (int i = nums.size() - 1; i &gt;= nums.size() - k + 1; --i) &#123;</span><br><span class="line">        swap(nums[0], nums[i]);</span><br><span class="line">        --heapSize;</span><br><span class="line">        maxHeapify(nums, 0, heapSize);</span><br><span class="line">    &#125;</span><br><span class="line">    return nums[0];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
 <blockquote>
-<p><img src="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic1.png" alt="本文方法"></p>
+<ul>
+<li>时间复杂度$O(nlogn)$，建堆的时间代价是 $O(n)$，删除的总代价是 $O(klogn)$，因为$k &lt; n$，故渐进时间复杂为 $O(n+klogn)=O(nlogn)$。</li>
+<li>空间复杂度：$O(logn)$，即递归使用栈空间的空间代价。</li>
+</ul>
 </blockquote>
-<p><strong><em>Non-trivial Sample Mining</em></strong></p>
-<p>对样本进行合适采样可以加快模型的收敛速率和提高模型性能，比如常见的难样本挖掘。本文使用的采样策略很简单，就是损失函数不为0的样本(非平凡样本有非零损失，由于它们具有零梯度，因此随着模型的改进，将它们包括在内进行训练将在梯度融合过程中“削弱”非平凡示例的贡献)，具体来说，对于正样本，损失函数不为0意味着它们与anchor之间的距离大于$\alpha-m$, 类似的，对于负样本，损失函数不为0意味着它们与anchor之间的距离小于$\alpha$。<br>挖掘非平凡正样本和负样本。对于$x_i$,挖掘后的非平凡正样本集表示为$ P_{c,i}^{\ast} =\{ x_j^c | j \neq i, d_{ij}&gt;(\alpha-m)\}$；同理，负样本集表示为$N_{c,i}^{\ast}=\{x_{j}^{k} | k \neq c, d_{i j}&lt;\alpha\}$。</p>
-<p><strong><em>Loss-based Negative Examples Weighting</em></strong><br>但是存在一个问题就是非平凡负样本的数量通常比较大，并且它们的损失值幅度范围也较大，为了更好的利用它们，作者基于他们损失值进行加权。加权的方式为： </p>
-<script type="math/tex; mode=display">
-w_{i j}=\exp \left(T \cdot\left(\alpha-d_{i j}\right)\right), \mathrm{x}_{j}^{k} \in \mathrm{N}_{c, i}^{*}  \quad \quad \quad(9)</script><p>注意到，相对于任何嵌入的梯度幅度在等式（8）中始终为1。数学上：</p>
-<script type="math/tex; mode=display">
-\left\|\frac{\partial L_{\mathrm{m}}\left(\mathrm{x}_{i}, \mathrm{x}_{j} ; f\right)}{\partial f\left(\mathrm{x}_{j}\right)}\right\|_{2}=\left\|\frac{f\left(\mathrm{x}_{i}\right)-f\left(\mathrm{x}_{j}\right)}{\left\|f\left(\mathrm{x}_{i}\right)-f\left(\mathrm{x}_{j}\right)\right\|_{2}}\right\|_{2}=1
-\quad \quad (10)</script><p>因此，任何嵌入的梯度大小仅由加权策略$w_ij$确定。在这种情况下，评估其影响也很方便。在等式中（9），$T≥0$是控制加权负例的程度（斜率）的温度参数。如果$T = 0$，它将平等对待所有非平凡的否定例子。如果$T = +∞$，它将成为最难的负示例挖掘。</p>
-<p><strong><em>Optimisation Objective</em></strong><br>对于每个anchor, 希望使得它与正样本集$P$的距离越近越好，并且与负样本集$N_{c,i}$之间存在着$m$的间隔，同时，我们还希望使得负样本的之间大于边界$\alpha$。因此相当于使得同一类别位于一个半径为$\alpha-m$大小的超球体内。<br>为了将$P ^∗_{c,i}$中所有非平凡的正样本点汇集在一起并学习一个类超球面，最小化下列损失：</p>
-<script type="math/tex; mode=display">
-L_{\mathrm{P}}\left(\mathrm{x}_{i}^{c} ; f\right)=\frac{1}{\left|\mathbf{P}_{c, i}^{*}\right|} \sum_{\mathbf{x}_{j}^{c} \in \mathbf{P}_{c, i}^{*}} L_{\mathrm{m}}\left(\mathrm{x}_{i}^{c}, \mathrm{x}_{j}^{c} ; f\right)
-\quad \quad(11)</script><p>不加劝正样本是因为仅仅存在很少正样本。同理，为了拉远$N_{c,i}^*$中的非平凡负样本超过边界$\alpha$，需要最小化下列式子：</p>
-<script type="math/tex; mode=display">
-L_{\mathrm{N}}\left(\mathrm{x}_{i}^{c} ; f\right)=\sum_{\mathbf{x}_{j}^{k} \in\left[\mathbf{N}_{c, i}^{*}\right]} \frac{w_{i j}}{\sum_{\mathbf{x}_{j}^{k} \in\left[\mathbf{N}_{c, 1}^{*}\right]} w_{i j}} L_{\mathrm{m}}\left(\mathrm{x}_{i}^{c}, \mathrm{x}_{j}^{k} ; f\right)
-\quad \quad (12)</script><p>因此，整个损失函数为：</p>
-<script type="math/tex; mode=display">
-L_{\mathrm{RLL}}\left(\mathrm{x}_{i}^{c} ; f\right)=L_{\mathrm{P}}\left(\mathrm{x}_{i}^{c} ; f\right)+\lambda L_{\mathrm{N}}\left(\mathrm{x}_{i}^{c} ; f\right) \quad \quad(13)</script><p>$\lambda$控制正负样本集间的平衡，实验中设为1。将其他样本的特征视为常量。 因此，只有$f(x^c_i)$是根据其他元素加权组合的影响进行更新的。</p>
-<p>算法流程如下：</p>
+<h2 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a><strong>优先级队列</strong></h2><blockquote>
+<p>priority_queue&lt;Type, Container, Functional&gt;</p>
+</blockquote>
+<p>Type为数据类型， Container为保存数据的容器，Functional为元素比较方式。</p>
+<p>如果不写后两个参数，那么容器默认用的是vector，比较方式默认用operator&lt;，也就是优先队列是<strong>大根堆</strong>，队头元素最大。</p>
+<p>小根堆用greater &lt;Type&gt;函数，下面是小根堆的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt; p;</span><br></pre></td></tr></table></figure></p>
+<p>堆排序中，用优先级队列涉及到了自定义排序的问题，这里展示了两种写法：</p>
 <blockquote>
-<p><img src="https://github.com/DylanMaeng/Picture/raw/master/blogs/Ranked%20List%20Loss%20for%20Deep%20Metric%20Learning/pic3.png" alt="算法流程"></p>
+<ul>
+<li>使用 lambda表达式 + decltype</li>
+<li>使用 struct + 重载操作符()</li>
+</ul>
 </blockquote>
-<hr>
-<p><strong>论文链接</strong> : <a href="https://arxiv.org/pdf/1903.03238.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1903.03238.pdf</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//lambda表达式</span><br><span class="line">auto cmp = [捕获列表](参数列表) -&gt; 返回类型&#123; 函数体&#125;;  </span><br><span class="line">priority_queue&lt;Type, Container, decltype(cmp)&gt; pq(cmp);</span><br><span class="line"></span><br><span class="line">//结构体，重载操作符()</span><br><span class="line">struct cmp&#123;</span><br><span class="line">     bool operator()(参数列表) &#123;</span><br><span class="line">            return ;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -486,7 +462,11 @@ L_{\mathrm{RLL}}\left(\mathrm{x}_{i}^{c} ; f\right)=L_{\mathrm{P}}\left(\mathrm{
       
         <div class="post-tags">
           
-            <a href="/tags/度量学习/" rel="tag"># 度量学习</a>
+            <a href="/tags/数据结构与算法/" rel="tag"># 数据结构与算法</a>
+          
+            <a href="/tags/c/" rel="tag"># c++</a>
+          
+            <a href="/tags/力扣/" rel="tag"># 力扣</a>
           
         </div>
       
@@ -499,8 +479,8 @@ L_{\mathrm{RLL}}\left(\mathrm{x}_{i}^{c} ; f\right)=L_{\mathrm{P}}\left(\mathrm{
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/13/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2021/03/07/滑动窗口、双指针、单调栈和单调队列问题模板/" rel="next" title="滑动窗口、双指针、单调栈和单调队列问题模板">
+                <i class="fa fa-chevron-left"></i> 滑动窗口、双指针、单调栈和单调队列问题模板
               </a>
             
           </div>
@@ -508,10 +488,6 @@ L_{\mathrm{RLL}}\left(\mathrm{x}_{i}^{c} ; f\right)=L_{\mathrm{P}}\left(\mathrm{
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/26/矩阵理解/" rel="prev" title="理解矩阵">
-                理解矩阵 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -664,7 +640,7 @@ L_{\mathrm{RLL}}\left(\mathrm{x}_{i}^{c} ; f\right)=L_{\mathrm{P}}\left(\mathrm{
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction："><span class="nav-number">2.</span> <span class="nav-text">Introduction：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文贡献如下："><span class="nav-number">2.1.</span> <span class="nav-text">本文贡献如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structured-Losses"><span class="nav-number">3.</span> <span class="nav-text">Structured Losses</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ranking-Motivated-Structured-Losses"><span class="nav-number">3.1.</span> <span class="nav-text">Ranking-Motivated Structured Losses</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Triplet-Loss"><span class="nav-number">3.1.1.</span> <span class="nav-text">Triplet Loss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N-pair-mc"><span class="nav-number">3.1.2.</span> <span class="nav-text">N-pair-mc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lifted-Struct"><span class="nav-number">3.1.3.</span> <span class="nav-text">Lifted Struct</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Proxy-NCA"><span class="nav-number">3.1.4.</span> <span class="nav-text">Proxy-NCA</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clustering-Motivated-Structured-Losses"><span class="nav-number">3.2.</span> <span class="nav-text">Clustering-Motivated Structured Losses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Methodology"><span class="nav-number">3.3.</span> <span class="nav-text">Methodology</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pairwise-Constraint"><span class="nav-number">3.3.1.</span> <span class="nav-text">Pairwise Constraint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ranked-List-Loss"><span class="nav-number">3.3.2.</span> <span class="nav-text">Ranked List Loss</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法一：基于快速排序的选择方法"><span class="nav-number">1.</span> <span class="nav-text">方法一：基于快速排序的选择方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法二：基于堆排序的选择方法"><span class="nav-number">2.</span> <span class="nav-text">方法二：基于堆排序的选择方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆"><span class="nav-number">2.1.</span> <span class="nav-text">堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级队列"><span class="nav-number">2.2.</span> <span class="nav-text">优先级队列</span></a></li></ol></li></ol></div>
             
 
           </div>
